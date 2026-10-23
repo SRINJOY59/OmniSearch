@@ -1,0 +1,15 @@
+\begin{tabular}{rrrl}
+\toprule
+Selectivity & B+-tree (ms) & Column scan (ms) & Optimizer choice \\
+\midrule
+0.034\% & 0.054 & 0.450 & B+-tree \\
+0.069\% & 0.035 & 0.308 & B+-tree \\
+0.132\% & 0.056 & 0.284 & B+-tree \\
+0.524\% & 0.170 & 0.266 & column scan \\
+1.025\% & 0.370 & 0.329 & column scan \\
+2.023\% & 0.806 & 0.283 & column scan \\
+5.020\% & 2.291 & 0.259 & column scan \\
+10.018\% & 4.504 & 0.306 & column scan \\
+30.020\% & 13.895 & 0.279 & column scan \\
+\bottomrule
+\end{tabular}

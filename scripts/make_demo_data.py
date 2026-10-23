@@ -44,14 +44,24 @@ LECTURES = [
     ("lecture-optimizer", "Lecture 10: Query Optimization", ["Lecture 10: Query Optimization", "Cost models", "Join ordering", "Histograms"]),
     ("lecture-vectors", "Lecture 12: Vector Search", ["Lecture 12: Vector Search", "HNSW graphs", "Product quantization", "Hybrid search"]),
 ]
-FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+# Bold sans fonts on Linux, Windows and macOS, so the demo images look the same
+# everywhere; Pillow's small built-in font is the last resort.
+FONTS = [
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "C:/Windows/Fonts/arialbd.ttf",
+    "C:/Windows/Fonts/segoeuib.ttf",
+    "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+    "/Library/Fonts/Arial Bold.ttf",
+]
 
 
 def font(size):
-    try:
-        return ImageFont.truetype(FONT, size)
-    except OSError:
-        return ImageFont.load_default(size=size)
+    for path in FONTS:
+        try:
+            return ImageFont.truetype(path, size)
+        except OSError:
+            continue
+    return ImageFont.load_default(size=size)
 
 
 def shade(rgb, f):

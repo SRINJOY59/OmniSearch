@@ -1,0 +1,15 @@
+\begin{tabular}{lr}
+\toprule
+Metric & Value \\
+\midrule
+Documents / distinct terms & 50,000 / 29,083 \\
+Postings & 1,057,314 \\
+Index size, compressed vs raw & 2.71 MB vs 8.46 MB \\
+Bits per posting & 20.5 \\
+Vectorised VByte decode & 46 M integers/s \\
+BM25 p50 latency: exhaustive / WAND & 0.16 ms / 1.12 ms \\
+Documents fully scored: exhaustive / WAND & 7,600 / 289 \\
+SQLite FTS5 p50 latency & 0.26 ms \\
+Top-10 overlap with FTS5 & 98\% \\
+\bottomrule
+\end{tabular}
