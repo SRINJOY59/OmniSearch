@@ -1,0 +1,87 @@
+{
+  "benchmark": "quantization",
+  "env": {
+    "python": "3.13.17",
+    "numpy": "2.5.4",
+    "cpu_count": 4,
+    "machine": "x86_64",
+    "date": "2026-10-23 16:34 UTC"
+  },
+  "n": 50000,
+  "dim": 128,
+  "rows": [
+    {
+      "quantization": "float32",
+      "refine": 0,
+      "recall": 1.0,
+      "ms": 0.7087464899859697,
+      "bytes_per_vector": 512.0,
+      "build_s": 0.027576776999922004
+    },
+    {
+      "quantization": "sq8",
+      "refine": 0,
+      "recall": 0.986,
+      "ms": 1.7749059900370412,
+      "bytes_per_vector": 128.0,
+      "build_s": 0.05021354300015446
+    },
+    {
+      "quantization": "sq8",
+      "refine": 4,
+      "recall": 1.0,
+      "ms": 1.8479720599862048,
+      "bytes_per_vector": 128.0,
+      "build_s": 0.04620163199979288
+    },
+    {
+      "quantization": "pq32",
+      "refine": 0,
+      "recall": 0.5359999999999999,
+      "ms": 4.670115210033146,
+      "bytes_per_vector": 32.0,
+      "build_s": 9.91789566100033
+    },
+    {
+      "quantization": "pq32",
+      "refine": 4,
+      "recall": 0.9050000000000002,
+      "ms": 4.543780539984255,
+      "bytes_per_vector": 32.0,
+      "build_s": 9.734067206999953
+    },
+    {
+      "quantization": "pq16",
+      "refine": 0,
+      "recall": 0.297,
+      "ms": 2.0240771400040103,
+      "bytes_per_vector": 16.0,
+      "build_s": 5.679915961000006
+    },
+    {
+      "quantization": "pq16",
+      "refine": 4,
+      "recall": 0.628,
+      "ms": 1.907738730001256,
+      "bytes_per_vector": 16.0,
+      "build_s": 5.656369912999708
+    },
+    {
+      "quantization": "pq8",
+      "refine": 0,
+      "recall": 0.139,
+      "ms": 1.05679404998682,
+      "bytes_per_vector": 8.0,
+      "build_s": 3.590819186000317
+    },
+    {
+      "quantization": "pq8",
+      "refine": 4,
+      "recall": 0.34900000000000003,
+      "ms": 1.0743188300057227,
+      "bytes_per_vector": 8.0,
+      "build_s": 3.3783031240000128
+    }
+  ],
+  "data": "synthetic clustered vectors"
+}

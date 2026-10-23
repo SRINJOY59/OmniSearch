@@ -1,0 +1,80 @@
+{
+  "benchmark": "filters",
+  "env": {
+    "python": "3.13.17",
+    "numpy": "2.5.4",
+    "cpu_count": 4,
+    "machine": "x86_64",
+    "date": "2026-10-23 16:33 UTC"
+  },
+  "n": 200000,
+  "access_paths": [
+    {
+      "selectivity": 0.00034,
+      "tree_ms": 0.05403539998951601,
+      "scan_ms": 0.44954600007258705,
+      "optimizer_choice": "index"
+    },
+    {
+      "selectivity": 0.00069,
+      "tree_ms": 0.035104399921692675,
+      "scan_ms": 0.3077614000176254,
+      "optimizer_choice": "index"
+    },
+    {
+      "selectivity": 0.00132,
+      "tree_ms": 0.055761800012987806,
+      "scan_ms": 0.284260200078279,
+      "optimizer_choice": "index"
+    },
+    {
+      "selectivity": 0.00524,
+      "tree_ms": 0.170302799961064,
+      "scan_ms": 0.26578039996820735,
+      "optimizer_choice": "scan"
+    },
+    {
+      "selectivity": 0.01025,
+      "tree_ms": 0.3697635999742488,
+      "scan_ms": 0.32864559998415643,
+      "optimizer_choice": "scan"
+    },
+    {
+      "selectivity": 0.020235,
+      "tree_ms": 0.8062464000431646,
+      "scan_ms": 0.28256140003577457,
+      "optimizer_choice": "scan"
+    },
+    {
+      "selectivity": 0.0502,
+      "tree_ms": 2.290766399983113,
+      "scan_ms": 0.25881539995680214,
+      "optimizer_choice": "scan"
+    },
+    {
+      "selectivity": 0.10018,
+      "tree_ms": 4.5044848000543425,
+      "scan_ms": 0.306408999949781,
+      "optimizer_choice": "scan"
+    },
+    {
+      "selectivity": 0.300195,
+      "tree_ms": 13.895267600037187,
+      "scan_ms": 0.27947340004175203,
+      "optimizer_choice": "scan"
+    }
+  ],
+  "estimation_qerror": {
+    "equi_depth_mcv": {
+      "median": 1.0011880415137773,
+      "p90": 1.0209144315147107,
+      "max": 3.2499999999999996
+    },
+    "equi_width": {
+      "median": 1.1476387778154922,
+      "p90": 1.650131144914146,
+      "max": 802.05
+    }
+  },
+  "data": "log-normal prices with an 8% heavy hitter"
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "omnisearch-serve",
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": ["/c", "cd /d .. && C:\\MinGW\\bin\\mingw32-make.exe serve"],
+      "port": 8000
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# Neural encoders. These download weights from huggingface.co (and Whisper from
+# openaipublic.azureedge.net) on first use. A GPU is recommended for ingesting
+# large datasets; see scripts/precompute.py for the Colab workflow.
+torch>=2.4
+open_clip_torch>=2.24
+transformers>=4.44
+openai-whisper>=20240930

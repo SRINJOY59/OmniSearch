@@ -1,0 +1,53 @@
+{
+  "benchmark": "text",
+  "env": {
+    "python": "3.13.17",
+    "numpy": "2.5.4",
+    "cpu_count": 4,
+    "machine": "x86_64",
+    "date": "2026-10-23 16:33 UTC"
+  },
+  "docs": 50000,
+  "queries": 250,
+  "build_s": 2.136550986999737,
+  "index": {
+    "docs": 50000,
+    "terms": 29083,
+    "postings": 1057314,
+    "compressed_bytes": 2712736,
+    "uncompressed_bytes": 8458512,
+    "avgdl": 23.48
+  },
+  "bits_per_posting": 20.525490062554738,
+  "decode_million_ints_per_s": 46.260243414717756,
+  "algos": {
+    "exhaustive": {
+      "latency": {
+        "mean": 0.24170177599444287,
+        "p50": 0.16100649986583448,
+        "p95": 0.6120597000517591
+      },
+      "docs_scored": 7599.76,
+      "postings_touched": 10214.064
+    },
+    "wand": {
+      "latency": {
+        "mean": 4.865752195997629,
+        "p50": 1.1191705000328511,
+        "p95": 24.946888350154943
+      },
+      "docs_scored": 288.896,
+      "postings_touched": 843.332
+    }
+  },
+  "fts5": {
+    "build_s": 0.2950041539997983,
+    "latency": {
+      "mean": 4.423039252011222,
+      "p50": 0.2555429998665204,
+      "p95": 21.766503350022504
+    },
+    "top10_overlap_with_ours": 0.9752000000000001
+  },
+  "data": "synthetic Zipfian topic corpus, 30k-word vocabulary"
+}

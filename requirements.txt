@@ -1,0 +1,11 @@
+# Core engine + API + OCR + benchmarks + tests (all CPU, no model downloads needed)
+numpy>=1.26
+pillow>=10.1
+fastapi>=0.110
+uvicorn>=0.27
+python-multipart>=0.0.9
+rapidocr-onnxruntime>=1.3
+matplotlib>=3.8
+faiss-cpu>=1.8
+pytest>=8
+httpx>=0.27
