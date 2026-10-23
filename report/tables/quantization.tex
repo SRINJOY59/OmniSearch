@@ -1,0 +1,15 @@
+\begin{tabular}{lrrrr}
+\toprule
+Codes & Re-rank & Bytes/vector & Recall@10 & ms/query \\
+\midrule
+float32 & -- & 512 & 1.000 & 0.71 \\
+SQ8 & -- & 128 & 0.986 & 1.77 \\
+SQ8 & 4 & 128 & 1.000 & 1.85 \\
+PQ32 & -- & 32 & 0.536 & 4.67 \\
+PQ32 & 4 & 32 & 0.905 & 4.54 \\
+PQ16 & -- & 16 & 0.297 & 2.02 \\
+PQ16 & 4 & 16 & 0.628 & 1.91 \\
+PQ8 & -- & 8 & 0.139 & 1.06 \\
+PQ8 & 4 & 8 & 0.349 & 1.07 \\
+\bottomrule
+\end{tabular}

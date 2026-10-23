@@ -1,0 +1,13 @@
+\begin{tabular}{lrrr}
+\toprule
+Index & Build (s) & Best recall@10 & ms at recall $\geq$ 0.95 \\
+\midrule
+HNSW (ours) & 22.30 & 1.000 & 0.419 \\
+IVF (ours) & 2.51 & 1.000 & 0.040 \\
+IVF-PQ16 (ours) & 7.46 & 0.771 & -- \\
+Exact scan (ours) & 0.01 & 1.000 & 0.147 \\
+FAISS HNSW & 1.38 & 1.000 & 0.033 \\
+FAISS IVF & 0.82 & 1.000 & 0.016 \\
+FAISS IVF-PQ & 1.69 & 0.807 & -- \\
+\bottomrule
+\end{tabular}

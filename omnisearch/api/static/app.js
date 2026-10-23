@@ -303,9 +303,26 @@ function rejected(list) {
 
 /* ---------- running queries ---------- */
 
+// The URL hash mirrors the query and tab (#q=red+mug&tab=plan), so searches can be shared or bookmarked.
+function syncHash() {
+  const p = new URLSearchParams();
+  if ($("q").value.trim()) p.set("q", $("q").value.trim());
+  const tab = document.querySelector(".tabs button.active")?.dataset.tab;
+  if (tab && tab !== "results") p.set("tab", tab);
+  const h = p.toString();
+  history.replaceState(null, "", h ? `#${h}` : location.pathname + location.search);
+}
+
 function show(data, label) {
   renderResults(data);
   renderPlan(data);
+  syncHash();
+  if (state.pending) {
+    const { tab, open } = state.pending;
+    state.pending = null;
+    if (tab) selectTab(tab);
+    if (open != null && open !== "") openDetail(Number(open));
+  }
   if (data.omniql) $("omniql").value = data.omniql;
   const browsing = !$("q").value.trim() && !state.image && label !== "OmniQL";
   const total = state.info?.stats?.docs;
@@ -370,6 +387,7 @@ function selectTab(name) {
     b.setAttribute("aria-selected", b.dataset.tab === name);
   });
   document.querySelectorAll(".tab").forEach((t) => { t.hidden = t.id !== `tab-${name}`; });
+  syncHash();
 }
 
 function effectiveTheme() {
@@ -432,6 +450,10 @@ function init() {
     $("q").focus();
     $("q").select();
   });
+
+  const h = new URLSearchParams(location.hash.slice(1));
+  if (h.get("q")) $("q").value = h.get("q");
+  state.pending = { tab: h.get("tab"), open: h.get("open") };
 
   loadCollections().catch((e) => status(e.message, true));
 }

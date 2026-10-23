@@ -110,4 +110,36 @@ Selectivity q-error - equi-depth + MCV: median 1.00, p90 1.02, max 3.2; equi-wid
 | 25,000 | 0.8 | 29.1 | 1.67 | 29.0 | 0.70 | 0.41 | 0.94 | 1.49 |
 | 50,000 | 1.7 | 67.5 | 3.52 | 53.3 | 0.82 | 0.68 | 1.24 | 2.40 |
 
+## Retrieval quality: demo collection (classic offline encoders)
+
+![quality](figures/quality_demo.png)
+
+| query set | mode | R@1 | R@10 | MRR@10 | nDCG@10 |
+|---|---|---:|---:|---:|---:|
+| brand+category | keyword | 1.000 | 1.000 | 1.000 | 1.000 |
+| brand+category | vector | 1.000 | 1.000 | 1.000 | 1.000 |
+| brand+category | hybrid-rrf | 1.000 | 1.000 | 1.000 | 1.000 |
+| brand+category | hybrid-weighted | 1.000 | 1.000 | 1.000 | 1.000 |
+| brand+category | hybrid-auto | 1.000 | 1.000 | 1.000 | 1.000 |
+| colour+category | keyword | 1.000 | 1.000 | 1.000 | 0.806 |
+| colour+category | vector | 1.000 | 1.000 | 1.000 | 0.806 |
+| colour+category | hybrid-rrf | 1.000 | 1.000 | 1.000 | 0.831 |
+| colour+category | hybrid-weighted | 1.000 | 1.000 | 1.000 | 0.807 |
+| colour+category | hybrid-auto | 1.000 | 1.000 | 1.000 | 0.831 |
+| typos | keyword | 0.100 | 0.400 | 0.162 | 0.121 |
+| typos | vector | 0.833 | 1.000 | 0.886 | 0.872 |
+| typos | hybrid-rrf | 0.800 | 1.000 | 0.859 | 0.700 |
+| typos | hybrid-weighted | 0.833 | 1.000 | 0.891 | 0.866 |
+| typos | hybrid-auto | 0.800 | 1.000 | 0.868 | 0.773 |
+| sign text (OCR) | keyword | 0.500 | 0.500 | 0.500 | 0.500 |
+| sign text (OCR) | vector | 1.000 | 1.000 | 1.000 | 1.000 |
+| sign text (OCR) | hybrid-rrf | 0.875 | 0.875 | 0.875 | 0.875 |
+| sign text (OCR) | hybrid-weighted | 0.875 | 0.875 | 0.875 | 0.875 |
+| sign text (OCR) | hybrid-auto | 0.875 | 0.875 | 0.875 | 0.875 |
+| lecture (OCR) | keyword | 0.500 | 0.500 | 0.500 | 0.500 |
+| lecture (OCR) | vector | 0.917 | 0.917 | 0.917 | 0.917 |
+| lecture (OCR) | hybrid-rrf | 0.917 | 0.917 | 0.917 | 0.917 |
+| lecture (OCR) | hybrid-weighted | 0.917 | 0.917 | 0.917 | 0.917 |
+| lecture (OCR) | hybrid-auto | 0.917 | 0.917 | 0.917 | 0.917 |
+
 _Environment: Python 3.13.17, numpy 2.5.4, 4 CPUs, 2026-10-23 16:31 UTC._

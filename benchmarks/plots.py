@@ -335,6 +335,15 @@ def summary_md(figs) -> str:
         out.append("")
     for name in sorted(p.stem for p in RESULTS.glob("quality_*.json")):
         d = load(name)
+        if "sets" in d:  # benchmarks.demo_quality: one table per query set
+            out += ["## Retrieval quality: demo collection (classic offline encoders)", "",
+                    "![quality](figures/quality_demo.png)", "",
+                    "| query set | mode | R@1 | R@10 | MRR@10 | nDCG@10 |", "|---|---|---:|---:|---:|---:|"]
+            for set_name, s in d["sets"].items():
+                for mode, r in s["results"].items():
+                    out.append(f"| {set_name} | {mode} | {r['R@1']:.3f} | {r['R@10']:.3f} | {r['MRR@10']:.3f} | {r['nDCG@10']:.3f} |")
+            out.append("")
+            continue
         out += [f"## Retrieval quality: {d['dataset']}", "", "| mode | R@1 | R@5 | R@10 | MRR@10 | nDCG@10 |",
                 "|---|---:|---:|---:|---:|---:|"]
         for mode, r in d["results"].items():

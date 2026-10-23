@@ -200,6 +200,7 @@ models or downloads.
 | `bench_filters` | B+-tree vs column scan crossover; histogram q-error (equi-depth + MCV vs equi-width) |
 | `bench_quantization` | Memory vs recall for float32 / SQ8 / PQ32 / PQ16 / PQ8 ± re-ranking |
 | `bench_scale` | Build time, disk size and query latency from 10k to 50k documents |
+| `demo_quality` | Keyword vs vector vs hybrid on the demo collection (clean, typo and OCR query sets; offline) |
 | `retrieval_quality` | **Real data**: keyword vs vector vs hybrid on Flickr30k / COCO / MSR-VTT / Clotho |
 | `baselines/pgvector/run_pgvector.py` | The same hybrid queries on PostgreSQL + pgvector |
 
@@ -265,6 +266,12 @@ COCO keyword/hybrid results are optimistic.
   the index itself.
 - Systems benchmarks use synthetic data; retrieval quality needs the real
   datasets and models.
+
+## Report
+
+The course report is [report/omnisearch_report.pdf](report/omnisearch_report.pdf) (LaTeX source alongside).
+Its tables are generated from `results/*.json` by `python report/make_tables.py`, so re-running the
+benchmarks and recompiling refreshes every number.
 
 ## References
 
